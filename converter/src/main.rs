@@ -2,7 +2,7 @@ use std::io;
 
 fn main() {
     let mut temp: String = String::new();
-    let stdin = io::stdin();
+    let stdin: io::Stdin = io::stdin();
     println!("Welcome to Fº/Cº/K/R converter!");
     println!("Please enter the temperature you want to convert:");
 
@@ -22,9 +22,9 @@ fn main() {
     match scale.as_str() {
         "F" => {
             println!("Converting to Celsius, Rankine and Kelvin:");
-            let celsius = converter_cel(temp);
-            let rankine = converter_fahr_to_rankine(temp);
-            let kelvin = converter_cel_to_kelvin(celsius);
+            let celsius: f64 = converter_cel(temp);
+            let rankine: f64 = converter_fahr_to_rankine(temp);
+            let kelvin: f64 = converter_cel_to_kelvin(celsius);
             print_temp_message(celsius, "Celsius");
             print_temp_message(rankine, "Rankine");
             print_temp_message(kelvin, "Kelvin");
@@ -32,9 +32,9 @@ fn main() {
         }
         "C" => {
             println!("Converting to Fahrenheit, Kelvin and Rankine:");
-            let fahr = converter_fahr(temp);
-            let rankine = converter_fahr_to_rankine(fahr);
-            let kelvin = converter_cel_to_kelvin(temp);
+            let fahr: f64 = converter_fahr(temp);
+            let rankine: f64 = converter_fahr_to_rankine(fahr);
+            let kelvin: f64 = converter_cel_to_kelvin(temp);
             print_temp_message(fahr, "Fahrenheit");
             print_temp_message(kelvin, "Kelvin");
             print_temp_message(rankine, "Rankine");
@@ -42,18 +42,18 @@ fn main() {
         }
         "R" => {
             println!("Converting to Fahrenheit, Celsius and Kelvin:");
-            let fahr = converter_rankine_to_fahr(temp);
-            let celsius = converter_cel(fahr);
-            let kelvin = converter_cel_to_kelvin(celsius);
+            let fahr: f64 = converter_rankine_to_fahr(temp);
+            let celsius: f64 = converter_cel(fahr);
+            let kelvin: f64 = converter_cel_to_kelvin(celsius);
             print_temp_message(fahr, "Fahrenheit");
             print_temp_message(celsius, "Celsius");
             print_temp_message(kelvin, "Kelvin");
         }
         "K" => {
             println!("Converting to Celsius, Fahrenheit and Rankine:");
-            let celsius = converter_kelvin_to_cel(temp);
-            let fahr = converter_fahr(celsius);
-            let rankine = converter_fahr_to_rankine(fahr);
+            let celsius: f64 = converter_kelvin_to_cel(temp);
+            let fahr: f64 = converter_fahr(celsius);
+            let rankine: f64 = converter_fahr_to_rankine(fahr);
             print_temp_message(celsius, "Celsius");
             print_temp_message(fahr, "Fahrenheit");
             print_temp_message(rankine, "Rankine");
