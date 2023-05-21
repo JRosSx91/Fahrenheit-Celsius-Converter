@@ -90,7 +90,7 @@ fn print_temp_message(temp: f64, scale: &str) {
         "Celsius" => {
             if temp < 0.0 {
                 "That's really cold!"
-            } else if temp > 30.0 {
+            } else if temp >= 30.0 {
                 "That's really hot!"
             } else {
                 "That's a moderate temperature."
@@ -99,7 +99,7 @@ fn print_temp_message(temp: f64, scale: &str) {
         "Fahrenheit" => {
             if temp < 32.0 {
                 "That's really cold!"
-            } else if temp > 86.0 {
+            } else if temp >= 86.0 {
                 "That's really hot!"
             } else {
                 "That's a moderate temperature."
@@ -108,7 +108,7 @@ fn print_temp_message(temp: f64, scale: &str) {
         "Kelvin" => {
             if temp < 273.15 {
                 "That's really cold!"
-            } else if temp > 303.15 {
+            } else if temp >= 303.15 {
                 "That's really hot!"
             } else {
                 "That's a moderate temperature."
@@ -117,7 +117,7 @@ fn print_temp_message(temp: f64, scale: &str) {
         "Rankine" => {
             if temp < 491.67 {
                 "That's really cold!"
-            } else if temp > 867.67 {
+            } else if temp >= 545.67 {
                 "That's really hot!"
             } else {
                 "That's a moderate temperature."
