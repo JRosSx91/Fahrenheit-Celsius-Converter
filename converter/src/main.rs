@@ -6,7 +6,9 @@ fn main() {
     println!("Welcome to Fº/Cº/K/R converter!");
     println!("Please enter the temperature you want to convert:");
 
-    stdin.read_line(&mut temp).expect("Cannot read line :(");
+    stdin
+        .read_line(&mut temp)
+        .expect("Cannot read temperature😟");
 
     let temp: f64 = match temp.trim().parse() {
         Ok(num) => num,
@@ -16,7 +18,7 @@ fn main() {
     let mut scale: String = String::new();
     println!("What scale is this temperature in? Enter 'F' for Fahrenheit, 'C' for Celsius, 'K' for Kelvin and 'R' for Rankine:");
 
-    stdin.read_line(&mut scale).expect("Cannot read line :(");
+    stdin.read_line(&mut scale).expect("Cannot read scale😟");
     let scale: String = scale.trim().to_uppercase();
 
     match scale.as_str() {
