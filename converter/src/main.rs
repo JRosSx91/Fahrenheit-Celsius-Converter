@@ -3,7 +3,7 @@ use std::io;
 fn main() {
     let mut temp: String = String::new();
     let stdin = io::stdin();
-    println!("Welcome to Fº/Cº/K converter!");
+    println!("Welcome to Fº/Cº/K/R converter!");
     println!("Please enter the temperature you want to convert:");
 
     stdin.read_line(&mut temp).expect("Cannot read line :(");
