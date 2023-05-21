@@ -14,7 +14,7 @@ fn main() {
     };
 
     let mut scale: String = String::new();
-    println!("What scale is this temperature in? Enter 'F' for Fahrenheit, 'C' for Celsius or 'K' for Kelvin:");
+    println!("What scale is this temperature in? Enter 'F' for Fahrenheit, 'C' for Celsius, 'K' for Kelvin and 'R' for Rankine:");
 
     stdin.read_line(&mut scale).expect("Cannot read line :(");
     let scale: String = scale.trim().to_uppercase();
