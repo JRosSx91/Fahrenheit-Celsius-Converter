@@ -95,7 +95,7 @@ fn print_temp_message(temp: f64, scale: &str) {
     };
 
     println!(
-        "The converted temperature is {} degrees {}. {}",
+        "The converted temperature is {:.2} degrees {}. {}",
         temp, scale, message
     );
 }
