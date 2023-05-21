@@ -8,7 +8,7 @@ fn main() {
 
     stdin.read_line(&mut temp).expect("Cannot read line :(");
 
-    let temp: i32 = match temp.trim().parse() {
+    let temp: f64 = match temp.trim().parse() {
         Ok(num) => num,
         Err(_) => return,
     };
@@ -19,7 +19,7 @@ fn main() {
     stdin.read_line(&mut scale).expect("Cannot read line :(");
     let scale: String = scale.trim().to_uppercase();
 
-    let (result, result_scale) = match scale.as_str() {
+    match scale.as_str() {
         "F" => {
             println!("Converting to Celsius and Kelvin:");
             let celsius = converter_cel(temp);
@@ -49,26 +49,24 @@ fn main() {
             return;
         }
     };
-
-    print_temp_message(result, result_scale);
 }
-fn converter_cel(x: i32) -> i32 {
-    (x - 32) * 5 / 9
+fn converter_cel(x: f64) -> f64 {
+    (x - 32.0) * 5.0 / 9.0
 }
-fn converter_fahr(x: i32) -> i32 {
-    x * 9 / 5 + 32
+fn converter_fahr(x: f64) -> f64 {
+    x * 9.0 / 5.0 + 32.0
 }
-fn converter_kelvin_to_cel(x: i32) -> i32 {
-    x - 273
+fn converter_kelvin_to_cel(x: f64) -> f64 {
+    x - 273.15
 }
 
-fn converter_cel_to_kelvin(x: i32) -> i32 {
-    x + 273
+fn converter_cel_to_kelvin(x: f64) -> f64 {
+    x + 273.15
 }
-fn print_temp_message(temp: i32, scale: &str) {
-    let message = if temp < 0 {
+fn print_temp_message(temp: f64, scale: &str) {
+    let message = if temp < 0.0 {
         "That's really cold!"
-    } else if temp > 30 {
+    } else if temp > 30.0 {
         "That's really hot!"
     } else {
         "That's a moderate temperature."
