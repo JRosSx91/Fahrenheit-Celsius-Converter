@@ -21,27 +21,42 @@ fn main() {
 
     match scale.as_str() {
         "F" => {
-            println!("Converting to Celsius and Kelvin:");
+            println!("Converting to Celsius, Rankine and Kelvin:");
             let celsius = converter_cel(temp);
+            let rankine = converter_fahr_to_rankine(temp);
             let kelvin = converter_cel_to_kelvin(celsius);
             print_temp_message(celsius, "Celsius");
+            print_temp_message(rankine, "Rankine");
             print_temp_message(kelvin, "Kelvin");
             return;
         }
         "C" => {
-            println!("Converting to Fahrenheit and Kelvin:");
+            println!("Converting to Fahrenheit, Kelvin and Rankine:");
             let fahr = converter_fahr(temp);
+            let rankine = converter_fahr_to_rankine(fahr);
             let kelvin = converter_cel_to_kelvin(temp);
             print_temp_message(fahr, "Fahrenheit");
             print_temp_message(kelvin, "Kelvin");
+            print_temp_message(rankine, "Rankine");
             return;
         }
+        "R" => {
+            println!("Converting to Fahrenheit, Celsius and Kelvin:");
+            let fahr = converter_rankine_to_fahr(temp);
+            let celsius = converter_cel(fahr);
+            let kelvin = converter_cel_to_kelvin(celsius);
+            print_temp_message(fahr, "Fahrenheit");
+            print_temp_message(celsius, "Celsius");
+            print_temp_message(kelvin, "Kelvin");
+        }
         "K" => {
-            println!("Converting to Celsius and Fahrenheit:");
+            println!("Converting to Celsius, Fahrenheit and Rankine:");
             let celsius = converter_kelvin_to_cel(temp);
             let fahr = converter_fahr(celsius);
+            let rankine = converter_fahr_to_rankine(fahr);
             print_temp_message(celsius, "Celsius");
             print_temp_message(fahr, "Fahrenheit");
+            print_temp_message(rankine, "Rankine");
             return;
         }
         _ => {
@@ -62,6 +77,13 @@ fn converter_kelvin_to_cel(x: f64) -> f64 {
 
 fn converter_cel_to_kelvin(x: f64) -> f64 {
     x + 273.15
+}
+fn converter_fahr_to_rankine(x: f64) -> f64 {
+    x + 459.67
+}
+
+fn converter_rankine_to_fahr(x: f64) -> f64 {
+    x - 459.67
 }
 fn print_temp_message(temp: f64, scale: &str) {
     let message = if temp < 0.0 {
