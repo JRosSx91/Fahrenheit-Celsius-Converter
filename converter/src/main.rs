@@ -19,6 +19,7 @@ fn main() {
     println!("What scale is this temperature in? Enter 'F' for Fahrenheit, 'C' for Celsius, 'K' for Kelvin and 'R' for Rankine:");
 
     stdin.read_line(&mut scale).expect("Cannot read scale😟");
+
     let scale: String = scale.trim().to_uppercase();
 
     match scale.as_str() {
