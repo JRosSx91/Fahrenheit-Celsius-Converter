@@ -36,3 +36,10 @@ fn converter_cel(x: i32) -> i32 {
 fn converter_fahr(x: i32) -> i32 {
     x * 9 / 5 + 32
 }
+fn converter_kelvin_to_cel(x: i32) -> i32 {
+    x - 273
+}
+
+fn converter_cel_to_kelvin(x: i32) -> i32 {
+    x + 273
+}
