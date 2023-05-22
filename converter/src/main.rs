@@ -6,7 +6,9 @@ fn main() {
     println!("Welcome to Fº/Cº/K/R converter!");
     println!("Please enter the temperature you want to convert:");
 
-    stdin.read_line(&mut temp).expect("Cannot read temperature");
+    stdin
+        .read_line(&mut temp)
+        .expect("Cannot read temperature😟");
 
     let temp: f64 = match temp.trim().parse() {
         Ok(num) => num,
@@ -16,7 +18,7 @@ fn main() {
     let mut scale: String = String::new();
     println!("What scale is this temperature in? Enter 'F' for Fahrenheit, 'C' for Celsius, 'K' for Kelvin and 'R' for Rankine:");
 
-    stdin.read_line(&mut scale).expect("Cannot read scale");
+    stdin.read_line(&mut scale).expect("Cannot read scale😟");
 
     let scale: String = scale.trim().to_uppercase();
 
@@ -65,6 +67,13 @@ fn main() {
             return;
         }
     };
+
+    println!("\nPress Enter to exit...");
+
+    let mut _temp: String = String::new();
+    io::stdin()
+        .read_line(&mut _temp)
+        .expect("Failed to read line");
 }
 fn converter_cel(x: f64) -> f64 {
     (x - 32.0) * 5.0 / 9.0
@@ -90,36 +99,36 @@ fn print_temp_message(temp: f64, scale: &str) {
     let message = match scale {
         "Celsius" => {
             if temp < 0.0 {
-                "That's really cold!"
+                "That's really cold!❄️"
             } else if temp >= 30.0 {
-                "That's really hot!"
+                "That's really hot!🔥"
             } else {
                 "That's a moderate temperature."
             }
         }
         "Fahrenheit" => {
             if temp < 32.0 {
-                "That's really cold!"
+                "That's really cold!❄️"
             } else if temp >= 86.0 {
-                "That's really hot!"
+                "That's really hot!🔥"
             } else {
                 "That's a moderate temperature."
             }
         }
         "Kelvin" => {
             if temp < 273.15 {
-                "That's really cold!"
+                "That's really cold!❄️"
             } else if temp >= 303.15 {
-                "That's really hot!"
+                "That's really hot!🔥"
             } else {
                 "That's a moderate temperature."
             }
         }
         "Rankine" => {
             if temp < 491.67 {
-                "That's really cold!"
+                "That's really cold!❄️"
             } else if temp >= 545.67 {
-                "That's really hot!"
+                "That's really hot!🔥"
             } else {
                 "That's a moderate temperature."
             }
