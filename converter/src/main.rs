@@ -1,4 +1,4 @@
-use std::io::{self, Read};
+use std::io;
 
 fn main() {
     let mut temp: String = String::new();
@@ -31,7 +31,6 @@ fn main() {
             print_temp_message(celsius, "Celsius");
             print_temp_message(rankine, "Rankine");
             print_temp_message(kelvin, "Kelvin");
-            return;
         }
         "C" => {
             println!("Converting to Fahrenheit, Kelvin and Rankine:");
@@ -41,7 +40,6 @@ fn main() {
             print_temp_message(fahr, "Fahrenheit");
             print_temp_message(kelvin, "Kelvin");
             print_temp_message(rankine, "Rankine");
-            return;
         }
         "R" => {
             println!("Converting to Fahrenheit, Celsius and Kelvin:");
@@ -60,7 +58,6 @@ fn main() {
             print_temp_message(celsius, "Celsius");
             print_temp_message(fahr, "Fahrenheit");
             print_temp_message(rankine, "Rankine");
-            return;
         }
         _ => {
             println!("Invalid scale entered.");
