@@ -1,4 +1,4 @@
-use std::io;
+use std::io::{self, Read};
 
 fn main() {
     let mut temp: String = String::new();
